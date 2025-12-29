@@ -12,7 +12,7 @@ export default function Home(){
                 <img src={dev} alt="developer" className='dev'/>
             </div>*/} 
             <div className='link'>
-                <Link to="/signup" className='link-a'>Sign Up</Link>
+                <Link to="/signup" className='link-a'>Share Your New Year Wish</Link>
             </div>
         </section>
         </>
