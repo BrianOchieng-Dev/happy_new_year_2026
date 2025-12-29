@@ -6,7 +6,7 @@
 import React, { useState } from "react";
 import { loginUser } from "../firebase/auth"; // your auth functions
 import { useNavigate, Link } from "react-router-dom";
-
+import '../styles/auth.css';
 const Login = () => {
   const navigate = useNavigate();
 
@@ -45,103 +45,52 @@ const Login = () => {
   };
 
   return (
-    <div style={{display: "flex",
-      height: "100vh",
-          justifyContent: "center",
-          alignItems: "center",}}>
-    <div style={{
-          width: "350px",
-          padding: "30px",
-          background: "white",
-          borderRadius: "10px",
-          
-          boxShadow: "0 4px 15px rgba(0,0,0,0.1)"
-        }}>
-
-     
+    <section className="auth">
+    <div className="auth-s-s">
+    <div className="auth-s">
       {/* CARD */}
-      <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-md">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Login</h2>
+     
+        <h2 >Login</h2>
 
         {/* Error message */}
         {message && (
-          <p style={{ 
-            background: "#ffeaea", 
-            padding: "10px", 
-            borderRadius: "6px", 
-            color: "#cc0000",
-            marginBottom: "10px",
-            textAlign: "center"
-          }}>
+          <p >
             {message}
           </p>
         )}
-
-        <form onSubmit={handleLogin}>
-          <div className="mb-4">
-            <label className="block mb-1 font-medium">Email</label>
+      
             <input
               type="email"
-               style={inputStyle}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
             />
-          </div>
-
-          <div className="mb-6">
-            <label className="block mb-1 font-medium">Password</label>
             <input
               type="password"
-              style={inputStyle}
-              className="w-full p-3 border rounded-md focus:ring focus:ring-blue-200"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
             />
-          </div>
 
           {/* BUTTON */}
           <button
             type="submit"
             disabled={loading}
-            style={buttonStyle}
-            className={`w-full p-3 rounded-md text-white font-medium transition 
-              ${loading ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"}
-            `}
+            onClick={handleLogin}
+            className="link-a"
           >
             {loading ? "Logging in..." : "Login"}
           </button>
-          <div style={{textAlign:"center", marginTop:"10px"}}>
-            <p>Don't have an account? <Link to="/">Sign Up</Link></p>
+          <div >
+            <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
           </div>
-        </form>
-      </div>
+     
     </div>
     </div>
+    </section>
   );
 };
-const inputStyle = {
-  width: "100%",
-  padding: "12px",
-  marginBottom: "12px",
-  borderRadius: "6px",
-  border: "1px solid #ddd"
-};
-
-const buttonStyle = {
-  width: "100%",
-  padding: "12px",
-  background: "#007bff",
-  color: "white",
-  border: "none",
-  borderRadius: "6px",
-  cursor: "pointer",
-  fontWeight: "bold"
-};
-
-
 
 export default Login;

@@ -3,6 +3,8 @@
 import  { useState } from "react";
 import { registerUser } from "../firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
+import '../styles/auth.css';
+
 //import Login from "./Login";
 const Signup = () => {
      const navigate = useNavigate();
@@ -34,94 +36,48 @@ const Signup = () => {
   };
 
   return (
-    <div 
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        background: "#f5f7fa"
-      }}
-    >
-      <div 
-        style={{
-          width: "350px",
-          padding: "30px",
-          background: "white",
-          borderRadius: "10px",
-          boxShadow: "0 4px 15px rgba(0,0,0,0.1)"
-        }}
-      >
-        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
-          Create Account
-        </h2>
-
+    <section className="auth">
+    <div className="auth-s-s">
+      <div className="auth-s">
+        <h2 >Sign Up</h2>
         {/* Email */}
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Enter Your Email"
           value={email}
           onChange = {(e) => setEmail(e.target.value)}
-          style={inputStyle}
+         
         />
 
         {/* Password */}
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Enter Your Password"
           value={password}
           onChange = {(e) => setPassword(e.target.value)}
-          style={inputStyle}
+         
         />
 
          {/* Message , the logic it, if something is true, show something , else ,,otherwise.*/}
         {message && (
-          <p style={{ 
-            background: "#ffeaea", 
-            padding: "10px", 
-            borderRadius: "6px", 
-            color: "#cc0000",
-            marginBottom: "10px",
-            textAlign: "center"
-          }}>
-            {message}
-          </p>
+          <p>{message}</p>
         )}
 
 
         {/* Button */}
-        <button style={buttonStyle}
-        onClick={handleSignup}
-        disabled={loading}>
+        <button onClick={handleSignup} disabled={loading} className="link-a">
            {loading ? "Creating account..." : "Sign Up"} 
             {/* the login prevents multiple clicks, if loaading is true, account is being created, else the user needs to click
             to signup */}
         </button>
-        <div  style={{textAlign:"center",}}>
+        <div >
           <p>Already have an account? <Link to="/login">Login</Link></p>
         </div>
       </div>
     </div>
+    </section>
   );
 };
 
-const inputStyle = {
-  width: "100%",
-  padding: "12px",
-  marginBottom: "12px",
-  borderRadius: "6px",
-  border: "1px solid #ddd"
-};
-
-const buttonStyle = {
-  width: "100%",
-  padding: "12px",
-  background: "#007bff",
-  color: "white",
-  border: "none",
-  borderRadius: "6px",
-  cursor: "pointer",
-  fontWeight: "bold"
-};
 
 export default Signup;

@@ -1,0 +1,31 @@
+
+
+.auth{
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(243, 7, 7, 0.7)),
+      url('/image2.jpg') no-repeat center center/cover;
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+  
+}
+.auth-s {
+    display: flex;
+     flex-direction: column;
+     background-color: #ffff;
+     padding: 32px 64px;
+     border-radius: 8px;
+}
+.auth-s h2{
+    padding: 16px;
+    color: red;
+    font-size: 2rem;
+}
+.auth-s input{
+    padding: 8px 16px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border:1px solid gray;
+}

@@ -27,8 +27,15 @@
 .link-a{
     padding: 8px 16px;
     color: red;
+    font-size: 16px;
     font-weight: 500;
     margin: 20px;
     background-color: #ffffff;
     border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid red;
+    box-shadow: 
+  0 8px 25px rgba(255, 60, 60, 0.35),
+  0 0 12px rgba(255, 80, 80, 0.25);
+
 }
