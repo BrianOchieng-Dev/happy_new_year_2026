@@ -2,13 +2,24 @@
 .hero {
   min-height: 100vh;
    background:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(38, 34, 230, 0.7)),
-      url('./assets/image.jpg') no-repeat center center/cover;
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(243, 7, 7, 0.7)),
+      url('/image2.jpg') no-repeat center center/cover;
    min-height: 100vh;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
 }
 .hero h1{
     font-size: 4rem;
+    color: #fff;
+}
+.hero h2{
+    font-size: 2rem;
+    color:#ffffff;
+}
+.dev{
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem  4rem;
 }
