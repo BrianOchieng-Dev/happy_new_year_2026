@@ -5,7 +5,7 @@ import {
     signOut
 } from 'firebase/auth'
 
-import {auth} from '../firebase/firebase.js'
+import {auth} from './firestore.js'
 //sign up authentication
 export const registerUser = async (email, password) => {
     return await createUserWithEmailAndPassword(auth, email, password)

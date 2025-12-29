@@ -6,6 +6,7 @@ export default function Nav(){
         <header>
             <nav>
                 <Link to="/">Home</Link>
+                <Link to="/login">Login</Link>
             </nav>
         </header>
         </>
