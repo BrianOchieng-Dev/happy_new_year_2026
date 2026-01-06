@@ -3,7 +3,7 @@
 export default function Dashboard() {
     return(
         <>
-        <h1>Hello world</h1>
+        <h1>Send wishes to Midusa</h1>
         </>
     )
 }
